@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `roberts_simmons` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `roberts_simmons`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: roberts_simmons
@@ -71,31 +69,6 @@ LOCK TABLES `customer` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `inventory`
---
-
-DROP TABLE IF EXISTS `inventory`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `inventory` (
-  `Location` varchar(9) NOT NULL,
-  `ProdID` varchar(255) NOT NULL,
-  `Type` varchar(45) NOT NULL,
-  `ProdQty` int(11) NOT NULL,
-  PRIMARY KEY (`Location`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `inventory`
---
-
-LOCK TABLES `inventory` WRITE;
-/*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
-/*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `product`
 --
 
@@ -121,6 +94,10 @@ LOCK TABLES `product` WRITE;
 UNLOCK TABLES;
 
 --
+-- Dumping events for database 'roberts_simmons'
+--
+
+--
 -- Dumping routines for database 'roberts_simmons'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -133,4 +110,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-26 18:26:58
+-- Dump completed on 2018-04-27 18:06:19
