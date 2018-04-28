@@ -20,7 +20,7 @@ public class UserQuery {
 	}
 	
 	public void doAddUser(User user){
-		String query = "INSERT INTO customer (userID, emailAddress, password, firstName, LastName)";
+		String query = "INSERT INTO customer (userID, emailAddress, password, firstName, LastName) value (?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);

@@ -1,7 +1,0 @@
-To Do List
-
-/Create Login JSP
-
-/Create queries in all dbHelps
-
-/UserQuery - code doCheckUser method

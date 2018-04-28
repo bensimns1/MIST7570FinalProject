@@ -15,7 +15,7 @@ import dbHelpers.UserQuery;
 /**
  * Servlet implementation class AddUser
  */
-@WebServlet(description = "Controller for adding a new user to the database", urlPatterns = { "/AddUser" })
+@WebServlet(description = "Controller for adding a new user to the database", urlPatterns = { "/addUser" })
 public class AddUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -40,18 +40,20 @@ public class AddUser extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get the data
 		String userID = request.getParameter("userID");
+		String emailAddress = request.getParameter("emailAddress");
 		String password = request.getParameter("password");
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
-		String emailAddress = request.getParameter("emailAddress");
+
 		
 		//setup a user object
 		User user = new User();
 		user.getUserID();
+		user.getEmailAddress();
 		user.getPassword();
 		user.getFirstName();
 		user.getLastName();
-		user.getEmailAddress();
+
 		
 		//setup an dbHelper Object
 		UserQuery uq = new UserQuery();     

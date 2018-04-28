@@ -19,6 +19,12 @@
 	<br />
 	
 	<label>
+		Email Address:
+	</label>
+	<input type=text name=emailAddress value="" />
+	<br />
+	
+	<label>
 		Password:
 	</label>
 	<input type=text name=password value="" />
@@ -36,11 +42,7 @@
 	<input type=text name=lastName value="" />
 	<br />
 	
-	<label>
-		Email Address:
-	</label>
-	<input type=text name=emailAddress value="" />
-	<br />
+
 	
 	<input type=submit name=submit value="Add the User" />
 </form>
