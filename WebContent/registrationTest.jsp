@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Testing Registration Process</title>
 </head>
 <body>
-You've registrered. Check the database.
+You've registered. Check the database.
 </body>
 </html>

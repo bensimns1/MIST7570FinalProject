@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.User;
 import dbHelpers.UserQuery;
@@ -15,7 +16,8 @@ import dbHelpers.UserQuery;
 /**
  * Servlet implementation class AddUser
  */
-@WebServlet(description = "Controller for adding a new user to the database", urlPatterns = { "/addUser" })
+@WebServlet(description = "Controller for adding a new user to the database", 
+			urlPatterns = { "/addUser" })
 public class AddUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -48,13 +50,12 @@ public class AddUser extends HttpServlet {
 		
 		//setup a user object
 		User user = new User();
-		user.getUserID();
-		user.getEmailAddress();
-		user.getPassword();
-		user.getFirstName();
-		user.getLastName();
+		user.setUserID(userID);
+		user.setEmailAddress(emailAddress);;
+		user.setPassword(password);
+		user.setFirstName(firstName);
+		user.setLastName(lastName);
 
-		
 		//setup an dbHelper Object
 		UserQuery uq = new UserQuery();     
 		
@@ -62,6 +63,11 @@ public class AddUser extends HttpServlet {
 		uq.doAddUser(user);
 		
 		//pass execution control to the jsp
+		HttpSession session = request.getSession();
+		session.setAttribute("userID", userID);
+		session.setAttribute("firstName", firstName);
+		session.setAttribute("lastName", lastName);
+		
 		String url = "/registrationTest.jsp";
 		
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(url);

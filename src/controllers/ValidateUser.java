@@ -1,11 +1,17 @@
 package controllers;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import model.User;
+import dbHelpers.UserQuery;
 
 /**
  * Servlet implementation class ValidateUser
@@ -26,16 +32,34 @@ public class ValidateUser extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		throw new RuntimeException();
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
+		String userID = request.getParameter("userID");
+		String password = request.getParameter("password");
+		
+		User user = new User();
+		user.setUserID(userID);
+		user.setPassword(password);
+		
+		UserQuery checkUser = new UserQuery();
+		checkUser.doCheckUser(user);
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("userID", userID);
+		
+		
+		String url = "registrationTest.jsp";
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+		dispatcher.forward(request, response);
+		
+		
 	}
 
 }

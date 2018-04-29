@@ -1,4 +1,4 @@
-	package dbHelpers;
+package dbHelpers;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ public class MyDbConnection {
 	
 	private static final String dbName = "roberts_simmons";
 	private static final String dbUser = "root";
-	private static final String dbPwd  = "school";
+	private static final String dbPwd = "school";
 	
 	private static Connection connection = null;
 	private MyDbConnection () {}
@@ -17,22 +17,21 @@ public class MyDbConnection {
 		if (connection != null) {
 			return connection;
 		}
-		
 		String url = "jdbc:mysql://localhost:3306/" + dbName;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			connection = DriverManager.getConnection(url, dbUser, dbPwd); 
-		} catch (InstantiationException | IllegalAccessException
-				| ClassNotFoundException | SQLException e) {
-
+			connection = DriverManager.getConnection(url, dbUser, dbPwd);
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException
+				| SQLException e) {
+			
 			e.printStackTrace();
 		}
 		
 		if (connection == null) {
 			throw new RuntimeException("Error connecting to database.");
 		}
-		
 		return connection;
-	}	
+	}
 }
+

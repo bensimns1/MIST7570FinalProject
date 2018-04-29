@@ -8,16 +8,13 @@ import model.User;
 
 
 public class UserQuery {
-	private Connection connection;
+	
+public Connection connection;
 	
 	public UserQuery() {
-		connection = MyDbConnection.getConnection();
+		connection = MyDbConnection.getConnection();-
 	}
 	
-	public void doCheckUser() {
-		String query = "Query to validate userID & password";
-		
-	}
 	
 	public void doAddUser(User user){
 		String query = "INSERT INTO customer (userID, emailAddress, password, firstName, LastName) value (?, ?, ?, ?, ?)";
@@ -35,6 +32,20 @@ public class UserQuery {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+	
+	public void doCheckUser(User user) {
+		String query = "SELECT F_Name, L_Name FROM customer WHERE CustUserID = ? AND password = ?";
+		
+		try {
+			PreparedStatement ps = connection.prepareStatement(query);
+			
+			ResultSet results = ps.executeQuery();
+			results.next();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
 		}
 	}
 
