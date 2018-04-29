@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.User;
-import dbHelpers.UserQuery;
+import dbHelpers.AddQuery;
 
 /**
  * Servlet implementation class AddUser
@@ -33,7 +33,7 @@ public class AddUser extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		throw new RuntimeException();
+		doPost(request, response);
 	}
 
 	/**
@@ -57,12 +57,12 @@ public class AddUser extends HttpServlet {
 		user.setL_Name(l_Name);
 
 		//setup an dbHelper Object
-		UserQuery uq = new UserQuery();     
+		AddQuery uq = new AddQuery();     
 		
 		//pass the user to UserQuery to add to the database
 		uq.doAddUser(user);
 		
-		//pass execution control to the jsp
+				//pass execution control to the jsp
 		HttpSession session = request.getSession();
 		session.setAttribute("custUserID", custUserID);
 		session.setAttribute("f_Name", f_Name);

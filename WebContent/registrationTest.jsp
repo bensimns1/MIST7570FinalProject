@@ -4,9 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/stylesheet.css" />
+
 <title>Testing Registration Process</title>
 </head>
+
 <body>
-You've registered. Check the database.
+<h1>You've registered. Check the database.</h1>
+
+<img src="Images/WherzmaBalls.jpg" height="300" width= "400">
+
+<p>
+ <a href="products.jsp">Click here to view products!</a>
+ </p>
 </body>
 </html>

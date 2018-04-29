@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.User;
 import dbHelpers.UserQuery;
+import model.User;
 
 /**
  * Servlet implementation class ValidateUser
@@ -32,34 +32,38 @@ public class ValidateUser extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		throw new RuntimeException();
+		doPost(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		String custUserID = request.getParameter("custUserID");
 		String password = request.getParameter("password");
+		String email = null;
+		String f_Name = null;
+		String l_Name = null;
+
+		UserQuery uq = new UserQuery(custUserID);
+		uq.doCheckUser();
 		
 		User user = new User();
 		user.setCustUserID(custUserID);
 		user.setPassword(password);
 		
-		UserQuery checkUser = new UserQuery();
-		checkUser.doRead(custUserID);
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("checkUser", checkUser);
 
 		
-		String url = "registrationTest.jsp";
+		HttpSession session = request.getSession();
+		session.setAttribute("custUserID", custUserID);
+		session.setAttribute("email", email);
+		session.setAttribute("f_Name", f_Name);
+		session.setAttribute("l_Name", l_Name);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-		dispatcher.forward(request, response);
+		String url = "/loggedIn.jsp";
 		
-		
+	    RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+	    dispatcher.forward(request, response);		
 	}
 
 }

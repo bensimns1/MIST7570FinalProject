@@ -4,8 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/stylesheet.css" />
+
 <title>Create User</title>
 </head>
+<header>MIST7570 Dr. Piercy</header>
+
 <body>
 
 <h1>Create a user ID</h1>
@@ -46,5 +50,7 @@
 	
 	<input type=submit name=submit value="Add the User" />
 </form>
+    <Footer>Roberts/Simmons</Footer>
+
 </body>
 </html>
