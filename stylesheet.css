@@ -1,0 +1,112 @@
+@charset "ISO-8859-1";
+
+
+body {
+    background-color: MediumSeaGreen;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+div.absolute {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #73AD21;
+}
+
+body { text-align: center; }
+     /* center all items within body, this property is inherited */
+
+form { display: inline-block; }
+     /* reduces the width of the form to only what is necessary */
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+div {
+    height: 200px;
+    width: 100%;
+}
+p {
+    font-family: cursive;
+    font-size: 18px;
+	color: white;
+}
+
+form {
+    display: inline-block;
+    text-align: center;
+}
+tr {
+	font-size: 28px;
+	color: white;
+}
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+div {
+    max-width: 500px;
+    height: 100px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+li {
+    float: center;
+}
+
+li a {
+    display: block;
+    color: gray;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+li a.active {
+    color: white;
+    background-color: black;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    font-size: 30px;
+    clear: left;
+    text-align: center;
+       
+
+}
+}
+
