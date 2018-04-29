@@ -15,13 +15,13 @@
 	<label>
 		UserID:
 	</label>
-	<input type=text name=userID value="" />
+	<input type=text name=custUserID value="" />
 	<br />
 	
 	<label>
 		Email Address:
 	</label>
-	<input type=text name=emailAddress value="" />
+	<input type=text name=email value="" />
 	<br />
 	
 	<label>
@@ -33,13 +33,13 @@
 	<label>
 		First Name:
 	</label>
-	<input type=text name=firstName value="" />
+	<input type=text name=f_Name value="" />
 	<br />
 	
 	<label>
 		Last Name:
 	</label>
-	<input type=text name=lastName value="" />
+	<input type=text name=l_Name value="" />
 	<br />
 	
 

@@ -13,7 +13,7 @@
 	<label>
 		UserID:
 	</label>
-	<input type=text name=userID value="" />
+	<input type=text name=custUserID value="" />
 	<br />
 	
 	<label>

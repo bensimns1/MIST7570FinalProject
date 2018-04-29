@@ -2,105 +2,117 @@ package model;
 
 public class User {
 	
-	private String userID;
+	private String custUserID;
+	private String email;
 	private String password;
-	private String firstName;
-	private String lastName;
-	private String emailAddress;
+	private String f_Name;
+	private String l_Name;
+
 	/**
 	 * 
 	 */
 	public User() {
-		this.userID = "User01";
+		this.custUserID = "User01";
+		this.email="No email";
 		this.password="password";
-		this.firstName="Steve";
-		this.lastName="Brule";
-		this.emailAddress="No email";
+		this.f_Name="Steve";
+		this.l_Name="Brule";
 	}
+
 	/**
-	 * @param userID
+	 * @param custUserID
+	 * @param email
 	 * @param password
-	 * @param firstName
-	 * @param lastName
-	 * @param emailAddress
+	 * @param f_Name
+	 * @param l_Name
 	 */
-	public User(String userID, String password, String firstName, String lastName, String emailAddress) {
-		this.userID = userID;
+	public User(String custUserID, String email, String password, String f_Name, String l_Name) {
+		this.custUserID = custUserID;
+		this.email = email;
 		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.emailAddress = emailAddress;
+		this.f_Name = f_Name;
+		this.l_Name = l_Name;
 	}
+
 	/**
-	 * @return the userID
+	 * @return the custUserID
 	 */
-	public String getUserID() {
-		return userID;
+	public String getCustUserID() {
+		return custUserID;
 	}
+
 	/**
-	 * @param userID the userID to set
+	 * @param custUserID the custUserID to set
 	 */
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setCustUserID(String custUserID) {
+		this.custUserID = custUserID;
 	}
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	/**
 	 * @return the password
 	 */
 	public String getPassword() {
 		return password;
 	}
+
 	/**
 	 * @param password the password to set
 	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	/**
-	 * @return the firstName
+	 * @return the f_Name
 	 */
-	public String getFirstName() {
-		return firstName;
+	public String getF_Name() {
+		return f_Name;
 	}
+
 	/**
-	 * @param firstName the firstName to set
+	 * @param f_Name the f_Name to set
 	 */
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setF_Name(String f_Name) {
+		this.f_Name = f_Name;
 	}
+
 	/**
-	 * @return the lastName
+	 * @return the l_Name
 	 */
-	public String getLastName() {
-		return lastName;
+	public String getL_Name() {
+		return l_Name;
 	}
+
 	/**
-	 * @param lastName the lastName to set
+	 * @param l_Name the l_Name to set
 	 */
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setL_Name(String l_Name) {
+		this.l_Name = l_Name;
 	}
-	/**
-	 * @return the emailAddress
-	 */
-	public String getEmailAddress() {
-		return emailAddress;
-	}
-	/**
-	 * @param emailAddress the emailAddress to set
-	 */
-	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
-	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "User [userID=" + userID + ", password=" + password + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", emailAddress=" + emailAddress + "]";
+		return "User [custUserID=" + custUserID + ", email=" + email + ", password=" + password + ", f_Name=" + f_Name
+				+ ", l_Name=" + l_Name + "]";
 	}
-	
-	
+
 	
 
 }

@@ -41,20 +41,20 @@ public class AddUser extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get the data
-		String userID = request.getParameter("userID");
-		String emailAddress = request.getParameter("emailAddress");
+		String custUserID = request.getParameter("custUserID");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
+		String f_Name = request.getParameter("f_Name");
+		String l_Name = request.getParameter("l_Name");
 
 		
 		//setup a user object
 		User user = new User();
-		user.setUserID(userID);
-		user.setEmailAddress(emailAddress);;
+		user.setCustUserID(custUserID);
+		user.setEmail(email);;
 		user.setPassword(password);
-		user.setFirstName(firstName);
-		user.setLastName(lastName);
+		user.setF_Name(f_Name);
+		user.setL_Name(l_Name);
 
 		//setup an dbHelper Object
 		UserQuery uq = new UserQuery();     
@@ -64,9 +64,9 @@ public class AddUser extends HttpServlet {
 		
 		//pass execution control to the jsp
 		HttpSession session = request.getSession();
-		session.setAttribute("userID", userID);
-		session.setAttribute("firstName", firstName);
-		session.setAttribute("lastName", lastName);
+		session.setAttribute("custUserID", custUserID);
+		session.setAttribute("f_Name", f_Name);
+		session.setAttribute("l_Name", l_Name);
 		
 		String url = "/registrationTest.jsp";
 		

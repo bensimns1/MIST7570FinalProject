@@ -40,19 +40,19 @@ public class ValidateUser extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String userID = request.getParameter("userID");
+		String custUserID = request.getParameter("custUserID");
 		String password = request.getParameter("password");
 		
 		User user = new User();
-		user.setUserID(userID);
+		user.setCustUserID(custUserID);
 		user.setPassword(password);
 		
 		UserQuery checkUser = new UserQuery();
-		checkUser.doCheckUser(user);
+		checkUser.doRead(custUserID);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("userID", userID);
-		
+		session.setAttribute("checkUser", checkUser);
+
 		
 		String url = "registrationTest.jsp";
 		
