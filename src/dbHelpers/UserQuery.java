@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.User;
+import model.Login;
 
 public class UserQuery{
 
@@ -14,9 +15,11 @@ private ResultSet results;
 
 private User user = null;
 private String custUserID;
+private String password;
 
-    public UserQuery(String custUserID) {
+    public UserQuery(String custUserID, String password) {
 		this.custUserID = custUserID;
+		this.password = password;
     	connection = MyDbConnection.getConnection();
 
 
@@ -32,6 +35,7 @@ private String custUserID;
     	PreparedStatement ps = connection.prepareStatement(query);
 		
 		ps.setString(1, this.custUserID);
+		ps.setString(3, this.password);
         
 		this.results = ps.executeQuery();
 		

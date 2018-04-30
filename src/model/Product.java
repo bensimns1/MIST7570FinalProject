@@ -2,102 +2,102 @@ package model;
 
 public class Product {
 	
-	private String prodID;
-	private String type;
-	private String prodName;
-	private double prodPrice;
-	private int prodQty;
+	private String product_ID;
+	private String productType;
+	private String name;
+	private double productPrice;
+	private int productQty;
 	/**
 	 * 
 	 */
 	public Product() {
-		this.prodID = "Ball01";
-		this.type = "steel";
-		this.prodName = "Ball of Steel";
-		this.prodPrice = 99.99;
-		this.prodQty = 22;
+		this.product_ID = "Ball01";
+		this.productType = "steel";
+		this.name = "Ball of Steel";
+		this.productPrice = 99.99;
+		this.productQty = 22;
 	}
 	/**
-	 * @param prodID
-	 * @param type
-	 * @param prodName
-	 * @param prodPrice
-	 * @param prodQty
+	 * @param product_ID
+	 * @param productType
+	 * @param name
+	 * @param productPrice
+	 * @param productQty
 	 */
-	public Product(String prodID, String type, String prodName, double prodPrice, int prodQty) {
-		this.prodID = prodID;
-		this.type = type;
-		this.prodName = prodName;
-		this.prodPrice = prodPrice;
-		this.prodQty = prodQty;
+	public Product(String product_ID, String productType, String name, double productPrice, int productQty) {
+		this.product_ID = product_ID;
+		this.productType = productType;
+		this.name = name;
+		this.productPrice = productPrice;
+		this.productQty = productQty;
 	}
 	/**
-	 * @return the prodID
+	 * @return the product_ID
 	 */
-	public String getProdID() {
-		return prodID;
+	public String getProduct_ID() {
+		return product_ID;
 	}
 	/**
-	 * @param prodID the prodID to set
+	 * @param product_ID the product_ID to set
 	 */
-	public void setProdID(String prodID) {
-		this.prodID = prodID;
+	public void setProduct_ID(String product_ID) {
+		this.product_ID = product_ID;
 	}
 	/**
-	 * @return the type
+	 * @return the productType
 	 */
-	public String getType() {
-		return type;
+	public String getProductType() {
+		return productType;
 	}
 	/**
-	 * @param type the type to set
+	 * @param productType the productType to set
 	 */
-	public void setType(String type) {
-		this.type = type;
+	public void setProductType(String productType) {
+		this.productType = productType;
 	}
 	/**
-	 * @return the prodName
+	 * @return the name
 	 */
-	public String getProdName() {
-		return prodName;
+	public String getName() {
+		return name;
 	}
 	/**
-	 * @param prodName the prodName to set
+	 * @param name the name to set
 	 */
-	public void setProdName(String prodName) {
-		this.prodName = prodName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	/**
-	 * @return the prodPrice
+	 * @return the productPrice
 	 */
-	public double getProdPrice() {
-		return prodPrice;
+	public double getProductPrice() {
+		return productPrice;
 	}
 	/**
-	 * @param prodPrice the prodPrice to set
+	 * @param productPrice the productPrice to set
 	 */
-	public void setProdPrice(double prodPrice) {
-		this.prodPrice = prodPrice;
+	public void setProductPrice(double productPrice) {
+		this.productPrice = productPrice;
 	}
 	/**
-	 * @return the prodQty
+	 * @return the productQty
 	 */
-	public int getProdQty() {
-		return prodQty;
+	public int getProductQty() {
+		return productQty;
 	}
 	/**
-	 * @param prodQty the prodQty to set
+	 * @param productQty the productQty to set
 	 */
-	public void setProdQty(int prodQty) {
-		this.prodQty = prodQty;
+	public void setProductQty(int productQty) {
+		this.productQty = productQty;
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Product [prodID=" + prodID + ", type=" + type + ", prodName=" + prodName + ", prodPrice=" + prodPrice
-				+ ", prodQty=" + prodQty + "]";
+		return "Product [product_ID=" + product_ID + ", productType=" + productType + ", name=" + name + ", productPrice=" + productPrice
+				+ ", productQty=" + productQty + "]";
 	}
 	
 	

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dbHelpers.UserQuery;
+import model.Login;
 import model.User;
 
 /**
@@ -45,20 +46,22 @@ public class ValidateUser extends HttpServlet {
 		String f_Name = null;
 		String l_Name = null;
 
-		UserQuery uq = new UserQuery(custUserID);
-		uq.doCheckUser();
+		Login login = new Login();
+		login.setCustUserID(custUserID);
+		login.setPassword(password);
 		
 		User user = new User();
-		user.setCustUserID(custUserID);
-		user.setPassword(password);
 		
-
+		UserQuery uq = new UserQuery(custUserID, password);
+		uq.doCheckUser();
+		
+		request.setAttribute("login", login);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("custUserID", custUserID);
-		session.setAttribute("email", email);
-		session.setAttribute("f_Name", f_Name);
-		session.setAttribute("l_Name", l_Name);
+		session.setAttribute("custUserID", user.getCustUserID());
+		session.setAttribute("email", user.getEmail());
+		session.setAttribute("f_Name", user.getF_Name());
+		session.setAttribute("l_Name", user.getL_Name());
 		
 		String url = "/loggedIn.jsp";
 		

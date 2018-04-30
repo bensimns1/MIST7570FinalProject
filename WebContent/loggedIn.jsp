@@ -2,8 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     
 <%
-
-	  // get the inputs from the session attributes
+  // get the inputs from the session attributes
   	String custUserID = (String) session.getAttribute("custUserID");
   	String email = (String) session.getAttribute("email");	
   	String f_name = (String) session.getAttribute("f_name");	

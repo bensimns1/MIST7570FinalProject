@@ -68,7 +68,7 @@ public class AddUser extends HttpServlet {
 		session.setAttribute("f_Name", f_Name);
 		session.setAttribute("l_Name", l_Name);
 		
-		String url = "/registrationTest.jsp";
+		String url = "/BeginShopping";
 		
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 	    dispatcher.forward(request, response);
